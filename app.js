@@ -1,4 +1,4 @@
-require('dotenv').config({ path: __dirname + '/../.env' }); // Load environment variables from .env file
+require('dotenv').config({ path: __dirname + '/.env' }); // Load environment variables from .env file
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
@@ -7,10 +7,10 @@ const _ = require("lodash");
 const app = express();
 
 app.set('view engine', 'ejs');
-app.set('views', __dirname + '/../views');
+app.set('views', __dirname + '/views');
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "/../public"));
+app.use(express.static(__dirname + "/public"));
 
 // Log the environment variable to check if it's being read correctly
 console.log("MONGODB_URI:", process.env.MONGODB_URI);
